@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- score -->
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player: 0  Computer: 0"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp" />
+
+    <!-- CPU selection -->
+    <TextView
+        android:id="@+id/tvComputerChoiceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Computer's Choice:"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvScore"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp" />
+    <ImageView
+        android:id="@+id/ivComputerChoice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/placeholder"
+        app:layout_constraintTop_toBottomOf="@id/tvComputerChoiceLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- player selection -->
+    <TextView
+        android:id="@+id/tvPlayerChoiceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player's Choice:"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/ivComputerChoice"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp" />
+    <ImageView
+        android:id="@+id/ivPlayerChoice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/placeholder"
+        app:layout_constraintTop_toBottomOf="@id/tvPlayerChoiceLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- RPS image previews -->
+    <ImageView
+        android:id="@+id/ivRockPlaceholder"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/rock"
+        app:layout_constraintTop_toBottomOf="@id/tvStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivPaperPlaceholder"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:layout_marginTop="32dp" />
+
+    <ImageView
+        android:id="@+id/ivPaperPlaceholder"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/paper"
+        app:layout_constraintTop_toBottomOf="@id/tvStatus"
+        app:layout_constraintStart_toEndOf="@id/ivRockPlaceholder"
+        app:layout_constraintEnd_toStartOf="@id/ivScissorsPlaceholder"
+        android:layout_marginTop="32dp" />
+
+    <ImageView
+        android:id="@+id/ivScissorsPlaceholder"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/scissors"
+        app:layout_constraintTop_toBottomOf="@id/tvStatus"
+        app:layout_constraintStart_toEndOf="@id/ivPaperPlaceholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- player choice buttons -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make your choice!"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/ivPlayerChoice"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp" />
+
+    <Button
+        android:id="@+id/btnPaper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="148dp"
+        android:text="Paper"
+        app:layout_constraintEnd_toStartOf="@id/btnScissors"
+        app:layout_constraintStart_toEndOf="@id/btnRock"
+        app:layout_constraintTop_toBottomOf="@id/ivPaperPlaceholder" />
+
+    <Button
+        android:id="@+id/btnScissors"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="148dp"
+        android:text="Scissors"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnPaper"
+        app:layout_constraintTop_toBottomOf="@id/ivScissorsPlaceholder" />
+
+    <Button
+        android:id="@+id/btnRock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="148dp"
+        android:text="Rock"
+        app:layout_constraintEnd_toStartOf="@id/btnPaper"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivRockPlaceholder" />
+
+    <!-- play again button -->
+    <Button
+        android:id="@+id/btnPlayAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Again"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnRock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
